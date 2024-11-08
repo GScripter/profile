@@ -167,8 +167,8 @@
                                         <div class="form-group row">
                                             <label class="col-lg-3 col-form-label form-control-label">Horários</label>
                                             <div class="col-lg-9">
-                                                <div class="tag-input" id="tagInput">
-                                                    <input type="text" placeholder="Digite e pressione Enter">
+                                                <div id="tagContainer" class="tag-container tag-input" onclick="input.focus()">
+                                                    <input type="text" id="tagInput" placeholder="Digite uma tag e pressione ';'">
                                                 </div>
                                             </div>
                                         </div>
@@ -227,14 +227,12 @@
         </div>
         <img class="footer-line" src="https://totalpc.com.br/tudocomercio/imgs/line.png" alt="">
         <script>
-            const tagInput = document.getElementById('tagInput');
-const input = tagInput.querySelector('input');
+            const input = document.getElementById('tagInput');
 
-input.addEventListener('keyup', function(event) {
-    if ((event.key === 'Enter' || event.key === '.') && input.value.trim() !== ''){
-        event.preventDefault();
-        addTag(input.value);
-        input.value = ''; // Limpa o campo
+input.addEventListener('input', function(event) {
+    if (event.target.value.includes(';') && event.target.value.trim() !== '') {
+        addTag(event.target.value.replace(';', '').trim()); // Remove o ';' e espaços extras
+        event.target.value = ''; // Limpa o campo
     }
 });
 
@@ -249,34 +247,35 @@ function addTag(text) {
     removeTag.onclick = () => tag.remove();
 
     tag.appendChild(removeTag);
-    tagInput.insertBefore(tag, input);
+    let tagContainer = document.getElementById("tagContainer")
+    tagContainer.insertBefore(tag, input);
 }
- // Função para buscar o endereço com base no CEP
-    function buscarEndereco() {
-      const cep = document.getElementById('cep').value.replace('-', '').trim();
+// Função para buscar o endereço com base no CEP
+function buscarEndereco() {
+    const cep = document.getElementById('cep').value.replace('-', '').trim();
 
-      // Validação de CEP (apenas números e com 8 dígitos)
-      if (!/^[0-9]{8}$/.test(cep)) {
+    // Validação de CEP (apenas números e com 8 dígitos)
+    if (!/^[0-9]{8}$/.test(cep)) {
         alert('Por favor, digite um CEP válido com 8 dígitos.');
         return;
-      }
+    }
 
-      // Requisição à API ViaCEP
-      fetch(`https://viacep.com.br/ws/${cep}/json/`)
+    // Requisição à API ViaCEP
+    fetch(`https://viacep.com.br/ws/${cep}/json/`)
         .then(response => response.json())
         .then(data => {
-          if (data.erro) {
-            alert('CEP não encontrado!');
-          } else {
-            // Preenche os campos do endereço com os dados retornados
-            document.getElementById('logradouro').value = data.logradouro;
-            document.getElementById('bairro').value = data.bairro;
-            document.getElementById('cidade').value = data.localidade;
-            document.getElementById('maps').src = `https://www.google.com/maps?q=${data.cep}&output=embed`;
-          }
+            if (data.erro) {
+                alert('CEP não encontrado!');
+            } else {
+                // Preenche os campos do endereço com os dados retornados
+                document.getElementById('logradouro').value = data.logradouro;
+                document.getElementById('bairro').value = data.bairro;
+                document.getElementById('cidade').value = data.localidade;
+                document.getElementById('maps').src = `https://www.google.com/maps?q=${data.cep}&output=embed`;
+            }
         })
         .catch(error => alert('Erro ao buscar o CEP.'));
-    }
+}
         </script>
 
     </body>
