@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>TudoComercio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    </head>
+    <body>
+        <img class="header-line" src="https://totalpc.com.br/tudocomercio/imgs/green-line.png" alt="">
+        <div class="container">
+            <div class="logoTudoComercio m-3 d-lg-none">
+                <img class="" src="https://totalpc.com.br/tudocomercio/imgs/logo.png" alt="">
+            </div>
+
+            <div class="row">
+                <div class="col-6"></div>
+                <div class="col-4 my-4 logoTudoComercio d-none d-lg-block">
+                    <img class="" src="https://totalpc.com.br/tudocomercio/imgs/logo.png" alt="">
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="profile-card-4 z-depth-3">
+                        <div class="card">
+                            <div class="card-body text-center rounded-top">
+                                <div class="user-box">
+                                    <img src="https://totalpc.com.br/tudocomercio/imgs/hammer-and-balance.jpg" alt="user avatar">
+                                </div>
+                                <h5 class="mb-1 text-white">Simonetti Advocacia </h5>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group shadow-none">
+                                    <li class="list-group-item">
+                                        <div class="list-icon">
+                                            <i class="fa fa-phone-square"></i>
+                                        </div>
+                                        <div class="list-details">
+                                            <span>9910XXXXXX</span>
+                                            <small>Número de telefone</small>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="list-icon">
+                                            <i class="fa fa-envelope"></i>
+                                        </div>
+                                        <div class="list-details">
+                                            <span>info@example.com</span>
+                                            <small>Endereço de E-mail</small>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="list-icon">
+                                            <i class="fa fa-globe"></i>
+                                        </div>
+                                        <div class="list-details">
+                                            <span>28.975.051/0001-58</span>
+                                            <small>CNPJ</small>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="row text-center mt-4">
+                                    <div class="col p-2">
+                                        <h4 class="mb-1 line-height-5">2.2k</h4>
+                                        <small class="mb-0 font-weight-bold">Instagram</small>
+                                    </div>
+                                    <div class="col p-2">
+                                        <h4 class="mb-1 line-height-5">9.1k</h4>
+                                        <small class="mb-0 font-weight-bold">Facebook</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer text-center">
+                                <a href="javascript:void()" class="btn-social btn-facebook waves-effect waves-light m-1"><i class="bi bi-facebook"></i></a>
+                                <a href="javascript:void()" class="list-inline-item btn-social btn-dribbble waves-effect waves-light"><i class="bi bi-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="card z-depth-3">
+                        <div class="card-body">
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Geral</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Endereço</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Imagens</button>
+                                </li>
+                            </ul>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Certeza que deseja realizar essa operação?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-content" id="pills-tabContent">
+                                <!-- General -->
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                    <div class="tab-content p-3">
+                                        <div class="tab-pane active show" id="edit">
+                                            <form>
+                                                <div class="row">
+                                                    <div class="col-xl-6 form-group my-2">
+                                                        <label class="form-label">Nome</label>
+                                                        <input class="form-control" type="text" placeholder="Simonetti Advocacia">
+                                                    </div>
+                                                    <div class="col-xl-6 form-group my-2">
+                                                        <label class="form-label">Nome fantasia</label>
+                                                        <input class="form-control" type="text" placeholder="Simonetti">
+                                                    </div>
+                                                    <div class="col-xl-6 form-group my-2">
+                                                        <label class="form-label">CNPJ</label>
+                                                        <input class="form-control" type="text" placeholder="28.975.051/0001-58">
+                                                    </div>
+                                                    <div class="col-xl-6 form-group my-2">
+                                                        <label class="form-label">E-mail</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                                            <input type="email" class="form-control" placeholder="simonetti@gmail.com">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6 form-group my-2">
+                                                        <label class="form-label">Instagram</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-text"><i class="bi bi-instagram"></i></span>
+                                                            <input type="text" class="form-control" placeholder="@Simonetti_123">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6 form-group my-2">
+                                                        <label class="form-label">Facebook</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-text"><i class="bi bi-facebook"></i></span>
+                                                            <input type="text" class="form-control" placeholder="facebook.com/usuário">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6 form-group my-2">
+                                                        <label class="form-label">Telefone 1</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
+                                                            <input type="tel" class="form-control" placeholder="9910XXXXXX">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6 form-group my-2">
+                                                        <label class="form-label">Telefone 2</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
+                                                            <input type="tel" class="form-control" placeholder="9910XXXXXX">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6 form-group my-2">
+                                                        <label class="form-label">Telefone 3</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
+                                                            <input type="tel" class="form-control" placeholder="9910XXXXXX">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6 form-group my-2">
+                                                        <label class="form-label">Categoria</label>
+                                                        <div class="dropdown">
+                                                            <button class="form-control dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                Categoria
+                                                            </button>
+                                                            <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+                                                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6 form-group my-2">
+                                                        <label class="form-label">Subcategoria</label>
+                                                        <div class="dropdown">
+                                                            <button class="form-control dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                Subcategoria
+                                                            </button>
+                                                            <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton2">
+                                                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-12 form-group my-2">
+                                                        <h4>Horários de segunda a sexta.</h4>
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <label class="form-label">Abertura 1</label>
+                                                                <input type="time" class="form-control" placeholder="9910XXXXXX">
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <label class="form-label">Fechamento  1</label>
+                                                                <input type="time" class="form-control" placeholder="9910XXXXXX">
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <label class="form-label">Abertura 2</label>
+                                                                <input type="time" class="form-control" placeholder="9910XXXXXX">
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <label class="form-label">Fechamento 2</label>
+                                                                <input type="time" class="form-control" placeholder="9910XXXXXX">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-12 form-group my-2">
+                                                        <h4>Horários de sábado.</h4>
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <label class="form-label">Abertura 1</label>
+                                                                <input type="time" class="form-control" placeholder="9910XXXXXX">
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <label class="form-label">Fechamento  1</label>
+                                                                <input type="time" class="form-control" placeholder="9910XXXXXX">
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <label class="form-label">Abertura 2</label>
+                                                                <input type="time" class="form-control" placeholder="9910XXXXXX">
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <label class="form-label">Fechamento 2</label>
+                                                                <input type="time" class="form-control" placeholder="9910XXXXXX">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-12 form-group my-2">
+                                                        <h4>Horários de domingo.</h4>
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <label class="form-label">Abertura 1</label>
+                                                                <input type="time" class="form-control" placeholder="9910XXXXXX">
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <label class="form-label">Fechamento  1</label>
+                                                                <input type="time" class="form-control" placeholder="9910XXXXXX">
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <label class="form-label">Abertura 2</label>
+                                                                <input type="time" class="form-control" placeholder="9910XXXXXX">
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <label class="form-label">Fechamento 2</label>
+                                                                <input type="time" class="form-control" placeholder="9910XXXXXX">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-12 mt-4 form-group my-2">
+                                                        <label class="form-label">Sobre a empresa</label>
+                                                        <textarea class="form-control" id="" name="" cols="30" rows="10"></textarea>
+                                                    </div>
+
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- Address -->
+                                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                    <div class="form-group row g-2">
+                                        <div class="col-lg-6">
+                                            <label class="form-label">Cep</label>
+                                            <input id="cep" class="form-control" type="text" placeholder="12345-678" onblur="buscarEndereco()">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="form-label">Cidade</label>
+                                            <input id="cidade" class="form-control" type="text" placeholder="São Sebastião">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="form-label">Bairro</label>
+                                            <input id="bairro" class="form-control" type="text" placeholder="Jardim das Flores">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="form-label">Logradouro</label>
+                                            <input id="logradouro" class="form-control" type="text" placeholder="Rua das Palmeiras">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="form-label">Número</label>
+                                            <input class="form-control" type="number" placeholder="10">
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <iframe
+                                                id="maps"
+                                                src="https://www.google.com/maps?q=01000-000&output=embed"
+                                                width="100%"
+                                                height="350"
+                                                style="border:0;"
+                                                allowfullscreen=""
+                                                loading="lazy">
+                                            </iframe>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Image -->
+                                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                    <div class="form-group row my-2">
+                                        <div class="col-lg-9">
+                                            <label class="form-label">Imagem Logo</label>
+                                            <input class="form-control" type="file">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row my-2">
+                                        <div class="col-lg-9">
+                                            <label class="form-label">Imagens da empresa</label>
+                                            <input class="form-control" type="file" multiple>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-end">
+                                    <input type="reset" class="btn btn-secondary m-1" value="Cancelar">
+                                    <a type="button" class="btn btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Editar
+                                    </a>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img class="footer-line" src="https://totalpc.com.br/tudocomercio/imgs/line.png" alt="">
+
+        <footer class="minimal-footer d-flex justify-content-center">
+            <div class="footer-content">
+                <p>📞 Suporte: <b>(XX) XXXX-XXXX</b></p>
+                <p>&copy; 2024 Todos os direitos reservados</p>
+            </div>
+        </footer>
+
+        <script>
+            // Função para buscar o endereço com base no CEP
+            function buscarEndereco() {
+                const cep = document.getElementById('cep').value.replace('-', '').trim();
+
+                // Validação de CEP (apenas números e com 8 dígitos)
+                if (!/^[0-9]{8}$/.test(cep)) {
+                    alert('Por favor, digite um CEP válido com 8 dígitos.');
+                    return;
+                }
+
+                // Requisição à API ViaCEP
+                fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.erro) {
+                            alert('CEP não encontrado!');
+                        } else {
+                            // Preenche os campos do endereço com os dados retornados
+                            document.getElementById('logradouro').value = data.logradouro;
+                            document.getElementById('bairro').value = data.bairro;
+                            document.getElementById('cidade').value = data.localidade;
+                            document.getElementById('maps').src = `https://www.google.com/maps?q=${data.cep}&output=embed`;
+                        }
+                    })
+                    .catch(error => alert('Erro ao buscar o CEP.'));
+            }
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
+</html>
+
