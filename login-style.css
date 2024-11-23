@@ -1,18 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
-* {
+
+.card{
+    min-height: 80vh;
+}
+
+*, *:after, *:before{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 .header-line{
-    margin-top: -25px;
+    margin-top: -20px;
     width: 100%;
-    transform: rotate(180deg);
 }
 
 .footer-line{
     width: 100%;
     padding-bottom: -10px;
+    margin-top: 50px;
 }
 
 .card {
@@ -21,8 +29,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 80vh;
-    margin: -20px 0 50px;
 }
 
 .card .logo{
