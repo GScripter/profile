@@ -470,12 +470,6 @@ body{
     padding: 15px 0;
 }
 
-@media (min-width: 1024px){
-    .minimal-footer{
-        margin-top: -20px;
-    }
-}
-
 .footer-content {
     max-width: 800px;
     margin: 0 auto;
@@ -495,10 +489,23 @@ body{
 .footer-content a:hover {
     text-decoration: underline;
 }
+
 .card-body-title{
     text-align: center;
-    font-size: 30px;
-    margin: 0 0 20px 0;
+    font-size: 20px;
+    margin: 0 0 15px 0;
     font-weight: 400;
     opacity: 0.8;
+}
+
+@media (min-width: 1024px){
+    .minimal-footer{
+        margin-top: -20px;
+    }
+}
+
+@media (min-width: 724px){
+    .card-body-title{
+        font-size: 30px;
+    }
 }
