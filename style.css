@@ -495,4 +495,10 @@ body{
 .footer-content a:hover {
     text-decoration: underline;
 }
-
+.card-body-title{
+    text-align: center;
+    font-size: 30px;
+    margin: 0 0 20px 0;
+    font-weight: 400;
+    opacity: 0.8;
+}
