@@ -330,9 +330,6 @@
                             <li class="nav-item" role="presentation">
                                 <button onclick="isActive()" class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Próximo</button>
                             </li>
-                            <li class="nav-item" role="presentation">
-                                <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="save" class="d-none nav-link text-light bg-primary">Salvar</a>
-                            </li>
                         </ul>
 
                     </div>
@@ -357,39 +354,39 @@
                 document.getElementById("save").classList.remove("d-none")
             }
 
-            function notActive(){
-                document.getElementById("anchor").scrollIntoView({ behavior: "smooth" });
+function notActive(){
+    document.getElementById("anchor").scrollIntoView({ behavior: "smooth" });
 
-                document.getElementById("pills-home-tab").classList.add("d-none")
-                document.getElementById("pills-profile-tab").classList.remove("d-none")
-                document.getElementById("save").classList.add("d-none")
+    document.getElementById("pills-home-tab").classList.add("d-none")
+    document.getElementById("pills-profile-tab").classList.remove("d-none")
+    document.getElementById("save").classList.add("d-none")
+}
+// Função para buscar o endereço com base no CEP
+function buscarEndereco() {
+    const cep = document.getElementById('cep').value.replace('-', '').trim();
+
+    // Validação de CEP (apenas números e com 8 dígitos)
+    if (!/^[0-9]{8}$/.test(cep)) {
+        alert('Por favor, digite um CEP válido com 8 dígitos.');
+        return;
+    }
+
+    // Requisição à API ViaCEP
+    fetch(`https://viacep.com.br/ws/${cep}/json/`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.erro) {
+                alert('CEP não encontrado!');
+            } else {
+                // Preenche os campos do endereço com os dados retornados
+                document.getElementById('logradouro').value = data.logradouro;
+                document.getElementById('bairro').value = data.bairro;
+                document.getElementById('cidade').value = data.localidade;
+                document.getElementById('maps').src = `https://www.google.com/maps?q=${data.cep}&output=embed`;
             }
-            // Função para buscar o endereço com base no CEP
-            function buscarEndereco() {
-                const cep = document.getElementById('cep').value.replace('-', '').trim();
-
-                // Validação de CEP (apenas números e com 8 dígitos)
-                if (!/^[0-9]{8}$/.test(cep)) {
-                    alert('Por favor, digite um CEP válido com 8 dígitos.');
-                    return;
-                }
-
-                // Requisição à API ViaCEP
-                fetch(`https://viacep.com.br/ws/${cep}/json/`)
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.erro) {
-                            alert('CEP não encontrado!');
-                        } else {
-                            // Preenche os campos do endereço com os dados retornados
-                            document.getElementById('logradouro').value = data.logradouro;
-                            document.getElementById('bairro').value = data.bairro;
-                            document.getElementById('cidade').value = data.localidade;
-                            document.getElementById('maps').src = `https://www.google.com/maps?q=${data.cep}&output=embed`;
-                        }
-                    })
-                    .catch(error => alert('Erro ao buscar o CEP.'));
-            }
+        })
+        .catch(error => alert('Erro ao buscar o CEP.'));
+}
         </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
